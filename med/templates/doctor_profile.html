@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .profile-info strong {
+            color: #555;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .patient-list {
+            margin-top: 30px;
+            display: none; /* Initially hidden */
+        }
+
+        .patient-list h3 {
+            color: #333;
+        }
+
+        .patient-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .patient-list li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Doctor Profile</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Profile Information</h2>
+            <div class="profile-info">
+                <p><strong>Name:</strong> {{ name }}</p>
+                <p><strong>Date of Birth:</strong> {{ dob }}</p>
+                <p><strong>Gender:</strong> {{ gender }}</p>
+                <p><strong>Hospital Name:</strong> {{ hospital_name }}</p>
+                <p><strong>Specialization:</strong> {{ specialization }}</p>
+                <p><strong>Department:</strong> {{ department }}</p>
+                <p><strong>Designation:</strong> {{ designation }}</p>
+                <p><strong>Work Experience:</strong> {{ work_experience }}</p>
+                <p><strong>Email ID:</strong> {{ email_id }}</p>
+                <p><strong>ID:</strong> {{ id }}</p>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <button onclick="togglePatientList()">View Patient List</button>
+            <button onclick="sendToDiagnostic()">Send to Diagnostic Center</button>
+        </div>
+
+        <section class="patient-list" id="patientList">
+            <h3>Patients List</h3>
+            <ul>
+                {% for patient in patients %}
+                <li>
+                    <p><strong>Name:</strong> {{ patient.name }}</p>
+                    <p><strong>Age:</strong> {{ patient.age }}</p>
+                    <p><strong>Gender:</strong> {{ patient.gender }}</p>
+                    <p><strong>Appointment Date:</strong> {{ patient.appointment_date }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        function togglePatientList() {
+            var patientList = document.getElementById('patientList');
+            if (patientList.style.display === 'none' || patientList.style.display === '') {
+                patientList.style.display = 'block';
+            } else {
+                patientList.style.display = 'none';
+            }
+        }
+
+        function sendToDiagnostic() {
+            alert('Patient details sent to the diagnostic center.');
+            // Implement actual logic to send patient details
+        }
+    </script>
+</body>
+</html>

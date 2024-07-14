@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .profile-info strong {
+            color: #555;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Patient Profile</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Profile Information</h2>
+            <div class="profile-info">
+                {% for pat in patient %}
+                <p><strong>Name:</strong>{{ pat.name }}</p>
+                <p><strong>Age:</strong>{{ pat.age }}</p>
+                <p><strong>Gender:</strong> {{ pat.gender }}</p>
+                <p><strong>Allergies:</strong> {{ pat.allergies }}</p>
+                {% endfor %}
+            </div>
+            <div class="button-container">
+                <button onclick="window.location.href=">Register for Doctor's Appointment</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

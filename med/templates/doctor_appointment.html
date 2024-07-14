@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Register for Doctor's Appointment</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Appointment Form</h2>
+            <form>
+                <label for="appointmentDate">Appointment Date:</label>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+                
+                <label for="appointmentTime">Appointment Time:</label>
+                <input type="time" id="appointmentTime" name="appointmentTime" required>
+                
+                <label for="doctorName">Doctor Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+                
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Doctor Registration</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Register as Doctor</h2>
+            <form method="post" action="{% url 'doctor_profile' %}">
+                {% csrf_token %}
+                <label for="doctorName">Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+                
+                <label for="doctorDOB">Date of Birth:</label>
+                <input type="date" id="doctorDOB" name="doctorDOB" required>
+                
+                <label for="doctorGender">Gender:</label>
+                <select id="doctorGender" name="doctorGender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label for="hospitalName">Hospital Name:</label>
+                <input type="text" id="hospitalName" name="hospitalName" required>
+                
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+                
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department" required>
+                
+                <label for="designation">Designation:</label>
+                <input type="text" id="designation" name="designation" required>
+                
+                <label for="workExperience">Work Experience:</label>
+                <input type="number" id="workExperience" name="workExperience" required>
+                
+                <label for="emailID">Email ID:</label>
+                <input type="email" id="emailID" name="emailID" required>
+                
+                <label for="doctorID">ID:</label>
+                <input type="text" id="doctorID" name="doctorID" required>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

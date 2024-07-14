@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ac42c3b1f7.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records Blockchain</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+           
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        .fas.fa-home:before { content: "\f015"; }
+        .fas.fa-user-plus:before { content: "\f234"; }
+        .fas.fa-info-circle:before { content: "\f05a"; }
+        .fas.fa-envelope:before { content: "\f0e0"; }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 40px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .button-container a {
+            text-decoration: none;
+        }
+
+        .button-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #45a049;
+        }
+        .btn{
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .img {
+    height: 150px;
+}
+.h {
+    font-size: 22px;
+}
+.about-para{
+    font-size: 22px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.bg {
+   
+    
+}
+
+.imge {
+    height: 90px;
+    margin-bottom: 9px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 35px;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left: 15px;
+    
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+}
+
+.icons {
+    color: #5a7184;
+    font-size: 19px;
+}
+
+.para {
+    font-size: 13px;
+}
+
+.h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.letushelp {
+    font-size: 15px;
+}
+
+.hr-line {
+    background-color: #5a7184;
+}
+
+.color {
+    color: #959ead;
+    font-weight: bold;
+}
+.image {
+    height: 60px;
+
+}
+.text{
+    color: white;
+}
+
+.healthy-food-section {
+    background-color: #f9fbfe;
+}
+
+.healthy-food-section-img {
+    width: 270px;
+}
+
+.healthy-food-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.healthy-food-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 16px;
+}
+.banner-section-bg-container {
+    background-image: url("https://res.cloudinary.com/drwz9digi/image/upload/v1720889992/Designer_4_skosdu.png");
+    height: 100vh;
+    background-size: cover;
+}
+
+.banner-heading {
+    color: white;
+    font-family: "Roboto";
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.banner-caption {
+    color: #f5f7fa;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 300;
+}
+.custom-button {
+    color: white;
+    background-image: linear-gradient(#d0b200, #a58d00);
+    width: 130px;
+    height: 45px;
+    border-width: 0;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+    </style>
+</head>
+<body>
+    
+       
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="https://res.cloudinary.com/drwz9digi/image/upload/v1720871487/Designer_ubzblt.png" class="image" />
+            </a><h2 class="text">MedBlock</h2>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse text" id="navbarNavAltMarkup">
+                <div class="navbar-nav text ml-auto">
+                    <a class="nav-link active text" href="#home">Home <span class="sr-only">(current)</span></a>
+                
+                    <a class="nav-link text" href="#register">Register</a>
+                    <a class="nav-link text" href="#about">About</a>
+                    <a class="nav-link text" href="#contact">Contact</a>
+                    <a class="nav-link text" href="">Connect to metamask</a>
+    
+                </div>
+            </div>
+        </nav>
+      
+   
+
+    <main>
+        <section id="home">
+            <div class="banner-section-bg-container d-flex justify-content-start flex-column">
+                <div class="text-center">
+                    <h1 class="banner-heading mb-3">Revolutionize Healthcare with Us: Secure Your Data on Blockchain Today!
+
+
+
+
+
+                    </h1>
+                    <button class="custom-button"><a  href="#register">Register</a></button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="register">
+            <h2>Register</h2>
+            
+             <div class="healthy-food-section pt-5 pb-5">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-5">
+                            <div class="text-center">
+                                <img src="https://res.cloudinary.com/drwz9digi/image/upload/v1720885903/Designer_1_yw5dhq.png" class="healthy-food-section-img" />
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <h1 class="healthy-food-section-heading">
+                               Register As patient
+                            </h1>
+                            <p class="healthy-food-section-description">
+                                Revolutionize Your Healthcare with Blockchain: Secure, Transparent, and Efficient Data Management
+                            <div class="button-container">
+                                <button ><a class="btn" href="{% url 'patients-reg' %}">Register as Patient</a></button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-5">
+                        <div class="text-center">
+                            <img src="https://res.cloudinary.com/drwz9digi/image/upload/v1720886136/Designer_3_hh2che.png" class="healthy-food-section-img" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7">
+                        <h1 class="healthy-food-section-heading">
+                           Register As Doctor
+                        </h1>
+                        <p class="healthy-food-section-description">
+                             Empower Your Practice: Register as a Doctor Today!
+                        <div class="button-container">
+                            <button>   <a class="btn" href="dr reg.html"> Register as Doctor</a></button>
+                    </div>
+                </div>
+
+                
+            </div>
+            <div class="row mb-3">
+                <div class="col-12 col-md-5">
+                    <div class="text-center">
+                        <img src="https://res.cloudinary.com/drwz9digi/image/upload/v1720886034/Designer_2_in4kuh.png" class="healthy-food-section-img" />
+                    </div>
+                </div>
+                <div class="col-12 col-md-7">
+                    <h1 class="healthy-food-section-heading">
+                       Register As Diognostic Entity
+                    </h1>
+                    <p class="healthy-food-section-description">
+                        Join the Future of Healthcare: Register Your O P Today!
+                    <div class="button-container">
+                        <button> <a class="btn" href="diognostic entity.html">Register as Diagnostic Entity</a></button>
+            </div>
+                </div>
+            </div>
+
+            
+        </div>
+            </div>
+                
+               
+
+              
+        </section>
+
+        <section id="about">
+           
+           
+            <div class="container">
+                <div class="row ">
+    
+                    <div class="col-12 p-4 mb-3">
+                        <h1>About</h1>
+                        <p class="about-para">Blockchain technology can revolutionize healthcare data management by providing a secure, efficient, and transparent system for handling patient records, insurance claims</p>
+                    </div>
+    
+                    <div class="col-12 col-md-3 p-3 text-center shadow  mr-4 mb-3 ml-3 m-auto ">
+                        <img src="https://image.shutterstock.com/image-vector/verified-protection-icon-control-symbol-260nw-1033776100.jpg" class="img pr-3" />
+                        <h1 class="h text-center p-2">Enhanced Security and Privacy</h1>
+                        <p>Once entered into the blockchain, patient records become immutable, providing a permanent and tamper-proof history of medical information.</p>
+                    </div>
+    
+                    <div class="col-12 col-md-3 p-3 text-center shadow  mb-3 mr-4  m-auto">
+                        <img src="https://img.icons8.com/?size=50&id=11341&format=png" class="img" />
+                        <h1 class="h">Seamless Data Accessibility</h1>
+                        <p>Authorized healthcare professionals can access updated patient records in real-time, facilitating timely and informed decision-making.</p>
+                    </div>
+    
+                    <div class="col-12 col-md-3 p-3 text-center shadow  mb-2 mr-4 m-auto">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-services-24-by-7-support-img.png" class="img" />
+                        <h1 class="h">Efficient Data Management</h1>
+                        <p>The use of blockchain minimizes data entry errors and discrepancies, as all updates are automatically recorded and verified.</p>
+                    </div>
+    
+    
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="row bg p-3 ">
+                    <div class="col-12 col-md-6 text-center ">
+                        <div class="mt-3 pt-3"><img src="https://res.cloudinary.com/drwz9digi/image/upload/v1720871487/Designer_ubzblt.png" class="imge mb-3" /></div>
+                        <div class="d-flex flex-row justify-content-center ">
+                            <div class="icon"> <i class="fa-brands fa-google icons"></i></div>
+                            <div class="icon"> <i class="fa-brands fa-twitter icons"></i></div>
+                            <div class="icon"> <i class="fa-brands fa-instagram icons"></i></div>
+                            <div class="icon"> <i class="fa-brands fa-linkedin icons"></i></div>
+                        </div>
+                        
+                    </div>
+        
+                    <div class="col-6 col-md-6 p-3 mt-md-3 pt-md-2 text-md-left">
+                        <div>
+                            <h1 class="h1 pb-3">contact us</h1>
+                        </div>
+                        <div class="d-flex flex-row pb-3">
+                            <div> <i class="fa-solid fa-envelope mr-2"></i> </div>
+                            <div> <a>Hackhub@gmail.com</a></div>
+                        </div>
+        
+                        <div class="d-flex flex-row pb-3">
+                            <div> <i class="fa-solid fa-phone mr-2"></i> </div>
+                            <div> <a>1234567890</a></div>
+                        </div>
+        
+                        
+        
+                    </div>
+        
+                    
+        
+        
+                    <div class="col-12 text-center">
+                        <hr class="hr-line" />
+                        <i class="fa-regular fa-copyright"></i>
+                        <span class="color"> <a>2020 by Hackhub </a></span>
+        
+        
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Medical Records Blockchain. All rights reserved.</p>
+    </footer>
+</body>
+</html>
