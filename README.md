@@ -75,6 +75,7 @@ To set up the project locally, follow these steps:
 
 ## Screenshots 
 These screenshots provide a glimpse into the MedBlock application, highlighting its user-friendly interface and robust features aimed at revolutionizing healthcare data management.
+
 Home Page
 ![WhatsApp Image 2024-07-14 at 09 26 52_aeaee9d2](https://github.com/user-attachments/assets/da1c2cbc-4b2e-40d9-b271-68f79afeecc8)
 
