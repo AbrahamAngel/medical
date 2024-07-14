@@ -13,7 +13,6 @@ MedBlock is a decentralized application that leverages blockchain technology and
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
-- [Contact](#contact)
 
 ## Introduction
 
