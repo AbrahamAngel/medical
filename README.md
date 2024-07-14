@@ -37,6 +37,7 @@ MedBlock aims to provide a secure and efficient way for individuals to manage th
 
 ### Tools
 - Ganache (Blockchain Development)
+- Metamask
 
 ## Installation
 
@@ -90,9 +91,6 @@ We welcome contributions to MedBlock! To contribute, please fork the repository,
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-## Contact
-
-For any questions or inquiries, please contact us at [your-email@example.com](mailto:your-email@example.com).
 
 ---
 
