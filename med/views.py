@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from med.models import Patient
+from med.utils import interact_with_appointment_contract
+import json
 
 def index(request):
 	return render(request, 'index.html')
@@ -17,6 +19,7 @@ def patient_reg(request):
 		gender=request.POST.get("gender")
 		bloodgroup=request.POST.get("bloodgroup")
 		allergies=request.POST.get("allergies")
+		print(name)
 
 		Patient.objects.create(	
 			name=name,
@@ -25,6 +28,18 @@ def patient_reg(request):
 			bloodgroup=bloodgroup,
 			allergies=allergies,
 		)
+		abi_path = './blockchain_src/build/contracts/Appointment.json'
+
+		# Load the ABI from the JSON file
+		with open(abi_path, 'r') as file:
+			contract_json = json.load(file)
+			contract_abi = contract_json['abi']
+			contract_address = "0xda5479737d7d6384a4a5e5e1afD60EBD3B9bDd13"  # Replace with your contract's address
+
+
+		print(contract_abi)
+		interact_with_appointment_contract(contract_address, contract_abi, name, age, gender,bloodgroup, allergies)
 		return redirect('patient-profile')
-	else:
-		return render(request, 'patient_reg.html')
+
+	return render(request, 'patient_reg.html')
+
