@@ -46,7 +46,7 @@ To set up the project locally, follow these steps:
 
 1. *Clone the repository:*
     bash
-    git clone https://github.com/yourusername/MedBlock.git
+    git clone [https://github.com/yourusername/MedBlock.git](https://github.com/AbrahamAngel/medical/tree/feature/blockchain)
     cd MedBlock
     
 
@@ -103,9 +103,6 @@ Doctor Registration Form
 
 We welcome contributions to MedBlock! To contribute, please fork the repository, create a new branch, and submit a pull request with your changes. Ensure your code follows the project's coding standards and is well-documented.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 
 ---
