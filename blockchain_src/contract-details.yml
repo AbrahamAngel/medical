@@ -1,0 +1,42 @@
+Compiling your contracts...
+===========================
+✓ Fetching solc version list from solc-bin. Attempt #1
+✓ Downloading compiler. Attempt #1.
+> Compiling .\contracts\demo.sol
+> Artifacts written to E:\Blockchain\fcr-demo-contract\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.1+commit.c8a2cb62.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+2_demo_migration.js
+===================
+
+   Deploying 'demo'
+   ----------------
+   > transaction hash:    0x92af8f82e947f291f54011d42ad57889064cdfe90fc3abf4b5978b7716775ca9
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x4Ae5f0EbfD6c1835267Fd5F0aC9aAFFe51D362e6
+   > block number:        1
+   > block timestamp:     1720906489
+   > account:             0x70B6F825Eb895B618303B53642dDAA442dce1709
+   > balance:             99.999653147875
+   > gas used:            102771 (0x19173)
+   > gas price:           3.375 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000346852125 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:      0.000346852125 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.000346852125 ETH
