@@ -19,7 +19,6 @@ def patient_reg(request):
 		gender=request.POST.get("gender")
 		bloodgroup=request.POST.get("bloodgroup")
 		allergies=request.POST.get("allergies")
-		print(name)
 
 		Patient.objects.create(	
 			name=name,
@@ -38,7 +37,7 @@ def patient_reg(request):
 
 
 		print(contract_abi)
-		interact_with_appointment_contract(contract_address, contract_abi, name, age, gender,bloodgroup, allergies)
+		interact_with_appointment_contract(contract_address, contract_abi, name, gender, age)
 		return redirect('patient-profile')
 
 	return render(request, 'patient_reg.html')

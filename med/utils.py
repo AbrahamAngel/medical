@@ -11,7 +11,7 @@ import json
 
 # print(contract_abi)
 
-def interact_with_appointment_contract(contract_address, contract_abi, name, age, gender,bloodgroup, allergies):
+def interact_with_appointment_contract(contract_address, contract_abi, name, gender, age):
     """
     Interacts with the Appointment contract by creating an appointment and retrieving it.
 
@@ -34,19 +34,17 @@ def interact_with_appointment_contract(contract_address, contract_abi, name, age
 
     # Details for the new appointment
     patientName = name
-    patientAge = age
-    patientGender = gender
-    patientbloodgroup = bloodgroup
-    patientAllergies = allergies # Example timestamp (January 1, 2022)
+    doctorName = gender
+    appointmentDate = int(age)
 
     # Estimate gas required for the transaction
-    tx_hash = contract.functions.createAppointment(patientName, patientAge, patientGender,patientbloodgroup,patientAllergies).estimate_gas({
+    tx_hash = contract.functions.createAppointment(patientName, doctorName, appointmentDate).estimate_gas({
         'from': account
     })
     print(tx_hash)
 
     # Send the transaction
-    tx_receipt = contract.functions.createAppointment(patientName, patientAge, patientGender, patientbloodgroup, patientAllergies).transact({
+    tx_receipt = contract.functions.createAppointment(patientName, doctorName, appointmentDate).transact({
         'from': account, 'gas': tx_hash
     })
 
@@ -61,7 +59,9 @@ def interact_with_appointment_contract(contract_address, contract_abi, name, age
     print(f"Appointments made by {account}:")
     print(appointments)
     for appointment in appointments:
-        print(f"- Patient Name: {appointment.patientName},  Age: {appointment.patientAge},  Gender: {appointment.patientGender},  Blood Group: {appointment.patientbloodgroup},  Allergy: {appointment.patientAllergies}")
+        print(f"- Patient Name: {appointment.patientName}, Doctor Name: {appointment.doctorName}, Appointment Date: {appointment.appointmentDate}")
+
+        
 
 # # Example usage
 # if __name__ == "__main__":
